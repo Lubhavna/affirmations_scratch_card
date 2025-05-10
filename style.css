@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #f49ed4, #d50b8b);
+}
+.card-container {
+  width: 500px;
+  height: 500px;
+  border-radius: 16px;
+  background-color: #eee;
+  position: relative;
+}
+.text,
+.scratch {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.5);
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.scratch {
+  border: 1px solid #000;
+  cursor: grabbing;
+}
