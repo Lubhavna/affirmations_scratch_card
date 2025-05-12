@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -5,37 +6,118 @@
 }
 body {
   height: 100vh;
+  /* background: linear-gradient(to bottom, #f49ed4, #d50b8b); */
+  background-color: #ffe3e3;
+}
+.quote {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #f49ed4, #d50b8b);
+  gap: 12px;
 }
-.card-container {
-  width: 500px;
-  height: 500px;
-  border-radius: 16px;
-  background-color: #eee;
-  position: relative;
+.daily-quote {
+  width: 100%;
+  height: 4rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  box-shadow: 1px 2px 6px 2px rgba(255, 255, 255, 0.7);
+  padding: 12px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
-.text,
-.scratch {
-  height: 300px;
-  width: 300px;
+.daily-quote-text,
+.daily-quote-author {
+  font-size: 28px;
+  letter-spacing: 0.9px;
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 700;
+}
+.daily-quote-author {
+  font-weight: 600;
+}
+.daily-quote button {
+  display: block;
+  padding: 12px 32px;
+  border: none;
+  color: #eee;
+  border-radius: 22px;
+  text-transform: uppercase;
+  background-color: #000;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+}
+.zodiac {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3em;
+  padding-top: 12px;
+}
+.zodiac select {
+  width: 30%;
+  height: 3rem;
+  z-index: 10;
+}
+.cat-logo {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 16px;
-  box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.5);
+  height: 14rem;
+  right: 26%;
 }
-.text {
+.affirmation-generate-btn {
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2em;
+}
+.affirmation-generate-btn button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 22px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: #d9c4b1;
+}
+.affirmations-body {
+  width: 90%;
+  margin: 3rem auto;
+  background-color: white;
+  position: relative;
+  padding: 16px;
+}
+.affirmations-cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 4em;
+}
+.scratch-card {
+  background-color: #000;
+  width: 25em;
+  height: 20em;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.affirmation {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  color: #eee;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: grabbing;
   user-select: none;
 }
-.scratch {
-  border: 1px solid #000;
+canvas {
+  position: absolute;
   cursor: grabbing;
 }

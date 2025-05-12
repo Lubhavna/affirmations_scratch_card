@@ -7,13 +7,55 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="card-container">
-      <div class="text">
-        <h1>blah</h1>
-        <h2>blah</h2>
+    <div class="daily-quote">
+      <div class="quote">
+        <p class="daily-quote-text"></p>
+        <h3 class="daily-quote-author"></h3>
       </div>
-      <canvas width="200" height="200" class="scratch"></canvas>
+      <button class="new-quote-btn">New</button>
     </div>
-    <script src="script.js"></script>
+    <div class="affirmations-body">
+      <div class="zodiac">
+        <select>
+          <option value="Aries">Aries</option>
+          <option value="Taurus">Taurus</option>
+          <option value="Gemini">Gemini</option>
+          <option value="Cancer">Cancer</option>
+          <option value="Leo">Leo</option>
+          <option value="Virgo">Virgo</option>
+          <option value="Libra">Libra</option>
+          <option value="Scorpio">Scorpio</option>
+          <option value="Sagittarius">Sagittarius</option>
+          <option value="Capricorn">Capricorn</option>
+          <option value="Aquarius">Aquarius</option>
+          <option value="Pisces">Pisces</option>
+        </select>
+        <img class="cat-logo" src="./images/catLogo.png" alt="cat logo" />
+      </div>
+      <div class="affirmation-generate-btn">
+        <button class="affirm-btn">Generate Affirmations</button>
+      </div>
+      <div class="affirmations-cards-container">
+        <div class="scratch-card">
+          <div class="affirmation">
+            <p class="affirmation-text">Scratch card 1</p>
+          </div>
+          <canvas width="400" height="320" id="scratch-1"></canvas>
+        </div>
+        <div class="scratch-card">
+          <div class="affirmation">
+            <p class="affirmation-text">Scratch card 2</p>
+          </div>
+          <canvas width="400" height="320" id="scratch-2"></canvas>
+        </div>
+        <div class="scratch-card">
+          <div class="affirmation">
+            <p class="affirmation-text">Scratch card 3</p>
+          </div>
+          <canvas width="400" height="320" id="scratch-3"></canvas>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
