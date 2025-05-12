@@ -8,25 +8,28 @@ body {
   height: 100vh;
   /* background: linear-gradient(to bottom, #f49ed4, #d50b8b); */
   background-color: #ebd0d7;
+  font-family: "Lavishly Yours", cursive;
 }
 .quote {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
+  padding: 16px;
 }
 .daily-quote {
   width: 100%;
-  height: 4rem;
+  height: 4.2rem;
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   box-shadow: 1px 2px 6px 2px rgba(255, 255, 255, 0.7);
-  padding: 12px;
   gap: 16px;
+  padding: 12px;
   margin-bottom: 16px;
 }
+
 .daily-quote-text,
 .daily-quote-author {
   font-size: 28px;
@@ -52,18 +55,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 3em;
-  padding-top: 12px;
+  margin-bottom: 2em;
+  padding-top: 14px;
 }
 .zodiac select {
   width: 30%;
   height: 3rem;
   z-index: 10;
+  outline: none;
+  border-radius: 12px;
 }
 .cat-logo {
   position: absolute;
   height: 14rem;
-  right: 26%;
+  right: 25%;
 }
 .affirmation-generate-btn {
   width: 100%;
@@ -84,11 +89,13 @@ body {
   background-color: #d9c4b1;
 }
 .affirmations-body {
-  width: 90%;
+  width: 80%;
   margin: 3rem auto;
   background-color: white;
   position: relative;
   padding: 16px;
+  border-radius: 16px;
+  box-shadow: 2px 4px 6px 4px rgba(0, 0, 0, 0.6);
 }
 .affirmations-cards-container {
   display: flex;
@@ -99,23 +106,30 @@ body {
 }
 .scratch-card {
   background-color: #ffe3e3;
-  width: 25em;
+  width: 20em;
   height: 20em;
   border-radius: 16px;
   position: relative;
   overflow: hidden;
+  margin-right: 12px;
 }
 .affirmation {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #000;
   font-weight: 600;
   letter-spacing: 1px;
   cursor: grabbing;
   user-select: none;
+}
+.affirmation p {
+  font-size: 28px;
+  max-width: 70%;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 canvas {
   position: absolute;
