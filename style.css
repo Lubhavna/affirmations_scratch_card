@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   /* background: linear-gradient(to bottom, #f49ed4, #d50b8b); */
-  background-color: #ffe3e3;
+  background-color: #ebd0d7;
 }
 .quote {
   display: flex;
@@ -98,7 +98,7 @@ body {
   margin-bottom: 4em;
 }
 .scratch-card {
-  background-color: #000;
+  background-color: #ffe3e3;
   width: 25em;
   height: 20em;
   border-radius: 16px;
@@ -111,7 +111,7 @@ body {
   display: grid;
   place-items: center;
   font-size: 24px;
-  color: #eee;
+  color: #000;
   font-weight: 600;
   letter-spacing: 1px;
   cursor: grabbing;
