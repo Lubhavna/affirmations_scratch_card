@@ -33,7 +33,22 @@ async function getRandomQuotes() {
   console.log(quote.choices[0].message.content);
   daily_quotes_text.textContent = quote.choices[0].message.content;
 }
+function clearCard() {
+  affirm_text_1.textContent = "";
+  affirm_text_2.textContent = "";
+  affirm_text_3.textContent = "";
+  createScratchCard("scratch-1", "#D9C4B1");
+  createScratchCard("scratch-2", "#D9C4B1");
+  createScratchCard("scratch-3", "#D9C4B1");
+  getZodiacAffirmations();
+}
 async function getZodiacAffirmations() {
+  affirm_text_1.textContent = "";
+  affirm_text_2.textContent = "";
+  affirm_text_3.textContent = "";
+  createScratchCard("scratch-1", "#D9C4B1");
+  createScratchCard("scratch-2", "#D9C4B1");
+  createScratchCard("scratch-3", "#D9C4B1");
   const zodiac = zodiac_sign.value;
   const response = await fetch(
     "https://api.groq.com/openai/v1/chat/completions",
@@ -57,13 +72,18 @@ async function getZodiacAffirmations() {
   const affirmation = await response.json();
   const a1 = affirmation.choices[0].message.content;
   let affirm = a1.split("~");
-  console.log(a1);
   affirm_text_1.textContent = affirm[0];
   affirm_text_2.textContent = affirm[1];
   affirm_text_3.textContent = affirm[2];
 }
 function createScratchCard(cardId, color) {
-  const canvas = document.getElementById(cardId);
+  const canvasParent = document.getElementById(cardId).parentElement;
+  document.getElementById(cardId).remove();
+  const canvas = document.createElement("canvas");
+  canvas.setAttribute("id", cardId);
+  canvas.width = 320;
+  canvas.height = 320;
+  canvasParent.appendChild(canvas);
   const ctx = canvas.getContext("2d");
   const init = () => {
     ctx.fillStyle = color;
@@ -101,11 +121,10 @@ function createScratchCard(cardId, color) {
   canvas.addEventListener("mousemove", mouseMove);
   canvas.addEventListener("touchmove", mouseMove);
   canvas.addEventListener("mouseup", mouseUp);
-  canvas.addEventListener("mouseup", mouseUp);
   canvas.addEventListener("touchend", mouseUp);
   init();
 }
-generate_affirmation_btn.addEventListener("click", getZodiacAffirmations);
+generate_affirmation_btn.addEventListener("click", clearCard);
 new_quote_btn.addEventListener("click", getRandomQuotes);
 createScratchCard("scratch-1", "#D9C4B1");
 createScratchCard("scratch-2", "#D9C4B1");
