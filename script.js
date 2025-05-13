@@ -7,7 +7,9 @@ const affirm_text_1 = document.querySelector(".affirmation-text-1");
 const affirm_text_2 = document.querySelector(".affirmation-text-2");
 const affirm_text_3 = document.querySelector(".affirmation-text-3");
 const generate_affirmation_btn = document.querySelector(".affirm-btn");
+const zodiac_container = document.querySelector(".zodiac");
 const zodiac_sign = document.querySelector(".zodiac-val");
+const zodiac_img = document.querySelector(".zodiac-symbol");
 async function getRandomQuotes() {
   const response = await fetch(
     "https://api.groq.com/openai/v1/chat/completions",
@@ -34,6 +36,7 @@ async function getRandomQuotes() {
   daily_quotes_text.textContent = quote.choices[0].message.content;
 }
 function clearCard() {
+  zodiac_img.src = "";
   affirm_text_1.textContent = "";
   affirm_text_2.textContent = "";
   affirm_text_3.textContent = "";
@@ -43,13 +46,9 @@ function clearCard() {
   getZodiacAffirmations();
 }
 async function getZodiacAffirmations() {
-  affirm_text_1.textContent = "";
-  affirm_text_2.textContent = "";
-  affirm_text_3.textContent = "";
-  createScratchCard("scratch-1", "#D9C4B1");
-  createScratchCard("scratch-2", "#D9C4B1");
-  createScratchCard("scratch-3", "#D9C4B1");
   const zodiac = zodiac_sign.value;
+  zodiac_img.setAttribute("src", `./images/${zodiac.toLowerCase()}.png`);
+  zodiac_img.removeAttribute("display");
   const response = await fetch(
     "https://api.groq.com/openai/v1/chat/completions",
     {
@@ -83,6 +82,8 @@ function createScratchCard(cardId, color) {
   canvas.setAttribute("id", cardId);
   canvas.width = 320;
   canvas.height = 320;
+  canvas.style.position = "absolute";
+  canvas.style.cursor = "grabbing";
   canvasParent.appendChild(canvas);
   const ctx = canvas.getContext("2d");
   const init = () => {
@@ -126,6 +127,3 @@ function createScratchCard(cardId, color) {
 }
 generate_affirmation_btn.addEventListener("click", clearCard);
 new_quote_btn.addEventListener("click", getRandomQuotes);
-createScratchCard("scratch-1", "#D9C4B1");
-createScratchCard("scratch-2", "#D9C4B1");
-createScratchCard("scratch-3", "#D9C4B1");

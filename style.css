@@ -58,6 +58,12 @@ body {
   margin-bottom: 2em;
   padding-top: 14px;
 }
+.zodiac-symbol {
+  position: absolute;
+  top: 2%;
+  left: 15%;
+  width: 10rem;
+}
 .zodiac select {
   width: 30%;
   height: 3rem;
@@ -131,7 +137,7 @@ body {
   letter-spacing: 1px;
   font-weight: 600;
 }
-canvas {
+/* canvas {
   position: absolute;
   cursor: grabbing;
-}
+} */
