@@ -33,7 +33,7 @@ body {
 }
 
 .daily-quote-text {
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 0.9px;
   font-weight: 500;
 }
@@ -57,7 +57,7 @@ body {
 }
 .zodiac-symbol {
   position: absolute;
-  top: 26%;
+  top: 2%;
   left: 4.6%;
   width: 8rem;
 }
@@ -113,7 +113,6 @@ body {
   justify-content: center;
   gap: 16px;
   margin-bottom: 2.7em;
-  z-index: 100;
 }
 .scratch-card {
   background-color: #ffe3e3;
@@ -131,9 +130,14 @@ body {
   cursor: grabbing;
   user-select: none;
   padding: 16px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 .affirmation p {
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 1px;
 }
 .canvas {
@@ -141,4 +145,52 @@ body {
   height: 320px;
   position: absolute;
   cursor: grabbing;
+}
+@media screen and (max-width: 380px) {
+  .affirmations-cards-container {
+    flex-direction: column;
+  }
+  .scratch-card {
+    width: 14em;
+    height: 14em;
+  }
+  .cat-logo {
+    display: none;
+  }
+  .zodiac-symbol {
+    width: 4rem;
+  }
+  .daily-quote-text,
+  .ready,
+  .affirmation p {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 380px) and (max-width: 840px) {
+  .affirmations-cards-container {
+    flex-direction: column;
+  }
+  .affirmation p {
+    font-size: 18px;
+    letter-spacing: 0.8px;
+  }
+  .ready {
+    font-size: 18px;
+  }
+  .daily-quote-text {
+    font-size: 14px;
+    letter-spacing: 0.8px;
+  }
+  .cat-logo {
+    display: none;
+  }
+  .scratch-card,
+  .canvas {
+    width: 18em;
+    height: 18em;
+  }
+  .zodiac-symbol {
+    width: 5rem;
+    top: 1%;
+  }
 }

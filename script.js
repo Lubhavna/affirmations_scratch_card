@@ -27,7 +27,7 @@ async function getRandomQuotes() {
           {
             role: "user",
             content:
-              "Generate a short but powerful quote with theme of confidence",
+              "Generate a random and unique each time, short, not more than 15 words, but powerful quote with themes of either happiness or self love.dont start wuth same words always",
           },
         ],
       }),
@@ -139,3 +139,4 @@ function createScratchCard(color) {
 }
 generate_affirmation_btn.addEventListener("click", getZodiacAffirmations);
 new_quote_btn.addEventListener("click", getRandomQuotes);
+getRandomQuotes();
