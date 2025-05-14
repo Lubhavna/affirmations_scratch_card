@@ -69,7 +69,7 @@ async function getZodiacAffirmations() {
         messages: [
           {
             role: "user",
-            content: `Generate three short but powerful affirmations for the zodiac sign ${zodiac} and add '~' after each and don't number them.`,
+            content: `Generate three short(not too long) but powerful affirmations for the zodiac sign ${zodiac} and add '~' after each and don't number them.`,
           },
         ],
       }),

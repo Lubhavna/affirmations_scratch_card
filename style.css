@@ -6,18 +6,9 @@
 }
 body {
   height: 100vh;
-  /* background: linear-gradient(to bottom, #f49ed4, #d50b8b); */
   background-color: #ebd0d7;
-  /* font-family: "Lavishly Yours", cursive; */
   font-family: "Pacifico", cursive;
   font-weight: 400;
-}
-.quote {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 16px;
 }
 .daily-quote {
   width: 100%;
@@ -33,7 +24,7 @@ body {
 }
 
 .daily-quote-text {
-  font-size: 20px;
+  font-size: 1.2em;
   letter-spacing: 0.9px;
   font-weight: 500;
 }
@@ -75,7 +66,7 @@ body {
   top: -10%;
 }
 .affirmation-generate-btn {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +86,7 @@ body {
 .ready {
   text-align: center;
   letter-spacing: 1px;
-  font-size: 22px;
+  font-size: 1.2em;
   margin-bottom: 1em;
 }
 .affirmations-body {
@@ -137,7 +128,7 @@ body {
   justify-content: start;
 }
 .affirmation p {
-  font-size: 22px;
+  font-size: 1.2em;
   letter-spacing: 1px;
 }
 .canvas {
@@ -160,26 +151,24 @@ body {
   .zodiac-symbol {
     width: 4rem;
   }
-  .daily-quote-text,
-  .ready,
-  .affirmation p {
-    font-size: 14px;
+  .daily-quote-text {
+    font-size: 0.9em;
+  }
+  .daily-quote {
+    justify-content: start;
+    gap: 2px;
+    height: 6rem;
+  }
+  .affirmation-generate-btn button {
+    padding: 6px 4px;
   }
 }
-@media screen and (min-width: 380px) and (max-width: 840px) {
+@media screen and (min-width: 380px) and (max-width: 750px) {
+  .daily-quote-text {
+    font-size: 0.9em;
+  }
   .affirmations-cards-container {
     flex-direction: column;
-  }
-  .affirmation p {
-    font-size: 18px;
-    letter-spacing: 0.8px;
-  }
-  .ready {
-    font-size: 18px;
-  }
-  .daily-quote-text {
-    font-size: 14px;
-    letter-spacing: 0.8px;
   }
   .cat-logo {
     display: none;
@@ -190,7 +179,7 @@ body {
     height: 18em;
   }
   .zodiac-symbol {
-    width: 5rem;
+    width: 5.5rem;
     top: 1%;
   }
 }
