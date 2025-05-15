@@ -1,6 +1,5 @@
-const quotesKey = "***REMOVED***";
-const affirmationsKey =
-  "***REMOVED***";
+const quotesKey = config.quotesKey;
+const affirmationsKey = config.affirmationsKey;
 const daily_quotes_text = document.querySelector(".daily-quote-text");
 const new_quote_btn = document.querySelector(".new-quote-btn");
 const affirm_text_1 = document.querySelector(".affirmation-text-1");
@@ -69,7 +68,7 @@ async function getZodiacAffirmations() {
         messages: [
           {
             role: "user",
-            content: `Generate three short(not too long) but powerful affirmations for the zodiac sign ${zodiac} and add '~' after each and don't number them.`,
+            content: `Generate three short(not more than 15 words), powerful affirmations for the zodiac sign ${zodiac} and add '~' after each and don't number them.`,
           },
         ],
       }),
@@ -88,7 +87,8 @@ async function getZodiacAffirmations() {
     console.log(affirm_text_2);
     console.log(affirm_text_3);
     createScratchCard("#D9C4B1");
-    ready_text.textContent = "Your affirmations are ready. Scratch to see them";
+    ready_text.textContent =
+      "Your affirmations are ready. Scratch the cards below!!!";
   }
 }
 function createScratchCard(color) {

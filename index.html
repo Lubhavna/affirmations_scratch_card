@@ -13,7 +13,7 @@
     </div>
     <div class="affirmations-body">
       <div class="zodiac">
-        <img class="zodiac-symbol" src="" />
+        <p class="select-sign">select your sign:</p>
         <select class="zodiac-val">
           <option value="Aries">Aries</option>
           <option value="Taurus">Taurus</option>
@@ -28,12 +28,16 @@
           <option value="Aquarius">Aquarius</option>
           <option value="Pisces">Pisces</option>
         </select>
-        <img class="cat-logo" src="./images/catLogo.png" alt="cat logo" />
+        <!-- <img class="cat-logo" src="./images/catLogo.png" alt="cat logo" /> -->
       </div>
       <div class="affirmation-generate-btn">
         <button class="affirm-btn">Generate Affirmations</button>
       </div>
-      <p class="ready"></p>
+      <div class="ready-symbol">
+        <p class="ready"></p>
+        <img class="zodiac-symbol" src="" />
+      </div>
+
       <div class="affirmations-cards-container">
         <div class="scratch-card">
           <div class="affirmation">
@@ -52,6 +56,7 @@
         </div>
       </div>
     </div>
-    <script type="module" src="script.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

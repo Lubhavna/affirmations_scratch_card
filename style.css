@@ -20,7 +20,7 @@ body {
   box-shadow: 1px 2px 6px 2px rgba(255, 255, 255, 0.7);
   gap: 16px;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 1em;
 }
 
 .daily-quote-text {
@@ -39,18 +39,28 @@ body {
   letter-spacing: 0.8px;
   cursor: pointer;
 }
+.daily-quote button:hover {
+  background-color: #d9c4b1;
+  color: #000;
+}
 .zodiac {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.7em;
-  padding-top: 14px;
+}
+.select-sign {
+  font-size: 1.5rem;
+  margin-right: 1.5em;
 }
 .zodiac-symbol {
-  position: absolute;
-  top: 2%;
-  left: 4.6%;
-  width: 8rem;
+  width: 5rem;
+}
+.ready-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 .zodiac select {
   width: 30%;
@@ -59,14 +69,7 @@ body {
   outline: none;
   border-radius: 12px;
 }
-.cat-logo {
-  position: absolute;
-  height: 10rem;
-  right: 28%;
-  top: -10%;
-}
 .affirmation-generate-btn {
-  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,15 +86,20 @@ body {
   cursor: pointer;
   background-color: #d9c4b1;
 }
+.affirmation-generate-btn button:active,
+.daily-quote button:active {
+  transform: translateY(2px);
+}
+.affirmation-generate-btn button:hover {
+  background-color: #d9a87b;
+}
 .ready {
-  text-align: center;
   letter-spacing: 1px;
   font-size: 1.2em;
-  margin-bottom: 1em;
 }
 .affirmations-body {
-  width: 85%;
-  margin: 3rem auto;
+  width: 80%;
+  margin: 1.8rem auto;
   background-color: white;
   position: relative;
   padding: 16px;
@@ -103,7 +111,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 2.7em;
+  margin-bottom: 2em;
 }
 .scratch-card {
   background-color: #ffe3e3;
@@ -125,11 +133,12 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
 }
 .affirmation p {
   font-size: 1.2em;
   letter-spacing: 1px;
+  text-align: center;
 }
 .canvas {
   width: 320px;
@@ -150,6 +159,7 @@ body {
   }
   .zodiac-symbol {
     width: 4rem;
+    display: none;
   }
   .daily-quote-text {
     font-size: 0.9em;
@@ -161,6 +171,13 @@ body {
   }
   .affirmation-generate-btn button {
     padding: 6px 4px;
+  }
+  .select-sign {
+    margin-right: 0.5em;
+    font-size: 1.2rem;
+  }
+  .ready-symbol {
+    flex-direction: column;
   }
 }
 @media screen and (min-width: 380px) and (max-width: 750px) {
@@ -178,8 +195,8 @@ body {
     width: 18em;
     height: 18em;
   }
-  .zodiac-symbol {
-    width: 5.5rem;
-    top: 1%;
+  .ready-symbol {
+    flex-direction: column;
+    gap: 4px;
   }
 }
