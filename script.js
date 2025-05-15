@@ -17,7 +17,7 @@ async function getRandomQuotes() {
     {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${quotesKey}`,
+        ***REMOVED***: `***REMOVED*** ${quotesKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -60,7 +60,7 @@ async function getZodiacAffirmations() {
     {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${affirmationsKey}`,
+        ***REMOVED***: `***REMOVED*** ${affirmationsKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
