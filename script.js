@@ -1,5 +1,3 @@
-const quotesKey = config.quotesKey;
-const affirmationsKey = config.affirmationsKey;
 const daily_quotes_text = document.querySelector(".daily-quote-text");
 const new_quote_btn = document.querySelector(".new-quote-btn");
 const affirm_text_1 = document.querySelector(".affirmation-text-1");
@@ -12,28 +10,10 @@ const zodiac_img = document.querySelector(".zodiac-symbol");
 const ready_text = document.querySelector(".ready");
 const canvas_container = document.querySelectorAll(".scratch-card");
 async function getRandomQuotes() {
-  const response = await fetch(
-    "https://api.groq.com/openai/v1/chat/completions",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${quotesKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
-        messages: [
-          {
-            role: "user",
-            content:
-              "Generate a random and unique each time, short, not more than 15 words, but powerful quote with themes of either happiness or self love.dont start wuth same words always",
-          },
-        ],
-      }),
-    }
-  );
+  const response = await fetch("/api");
   const quote = await response.json();
-  daily_quotes_text.textContent = quote.choices[0].message.content;
+  daily_quotes_text.textContent = quote.quote;
+  console.log(quote.quote);
 }
 function clearCard() {
   zodiac_img.src = "";
@@ -55,27 +35,10 @@ async function getZodiacAffirmations() {
   affirm_text_2.textContent = "Loading";
   affirm_text_3.textContent = "Loading";
   const zodiac = zodiac_sign.value;
-  const response = await fetch(
-    "https://api.groq.com/openai/v1/chat/completions",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${affirmationsKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
-        messages: [
-          {
-            role: "user",
-            content: `Generate three short(not more than 15 words), powerful affirmations for the zodiac sign ${zodiac} and add '~' after each and don't number them.`,
-          },
-        ],
-      }),
-    }
-  );
+  const response = await fetch(`/api1?zodiac=${encodeURIComponent(zodiac)}`);
   const affirmation = await response.json();
-  const a1 = affirmation.choices[0].message.content;
+  console.log(affirmation.affirmation);
+  const a1 = affirmation.affirmation;
   let affirm = a1.split("~");
   if (affirmation) {
     zodiac_img.setAttribute("src", `./images/${zodiac.toLowerCase()}.png`);
