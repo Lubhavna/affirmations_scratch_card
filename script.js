@@ -10,10 +10,11 @@ const zodiac_img = document.querySelector(".zodiac-symbol");
 const ready_text = document.querySelector(".ready");
 const canvas_container = document.querySelectorAll(".scratch-card");
 async function getRandomQuotes() {
-  const response = await fetch("/api");
+  const response = await fetch(
+    "https://affirmations-scratch-card.pages.dev/api"
+  );
   const quote = await response.json();
   daily_quotes_text.textContent = quote.quote;
-  console.log(quote.quote);
 }
 function clearCard() {
   zodiac_img.src = "";
@@ -35,9 +36,12 @@ async function getZodiacAffirmations() {
   affirm_text_2.textContent = "Loading";
   affirm_text_3.textContent = "Loading";
   const zodiac = zodiac_sign.value;
-  const response = await fetch(`/api1?zodiac=${encodeURIComponent(zodiac)}`);
+  const response = await fetch(
+    `https://affirmations-scratch-card.pages.dev/api1?zodiac=${encodeURIComponent(
+      zodiac
+    )}`
+  );
   const affirmation = await response.json();
-  console.log(affirmation.affirmation);
   const a1 = affirmation.affirmation;
   let affirm = a1.split("~");
   if (affirmation) {
@@ -46,9 +50,6 @@ async function getZodiacAffirmations() {
     affirm_text_1.textContent = affirm[0];
     affirm_text_2.textContent = affirm[1];
     affirm_text_3.textContent = affirm[2];
-    console.log(affirm_text_1);
-    console.log(affirm_text_2);
-    console.log(affirm_text_3);
     createScratchCard("#D9C4B1");
     ready_text.textContent =
       "Your affirmations are ready. Scratch the cards below!!!";
