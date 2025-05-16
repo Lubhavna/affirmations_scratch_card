@@ -3,7 +3,6 @@ export async function onRequest(context) {
   const affirmationsKey = context.env.affirmationsKey;
   const url = new URL(request.url);
   const zodiac = url.searchParams.get("zodiac") || "default";
-
   const response = await fetch(
     "https://api.groq.com/openai/v1/chat/completions",
     {

@@ -146,7 +146,7 @@ body {
   position: absolute;
   cursor: grabbing;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 385px) {
   .affirmations-cards-container {
     flex-direction: column;
   }
@@ -180,7 +180,7 @@ body {
     flex-direction: column;
   }
 }
-@media screen and (min-width: 380px) and (max-width: 750px) {
+@media screen and (min-width: 386px) and (max-width: 750px) {
   .daily-quote-text {
     font-size: 0.9em;
   }
